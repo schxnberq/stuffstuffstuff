@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Random Generator</title>
+
+    <style>
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+
+        .title {
+            width: 100%;
+            text-align: center;
+            margin-top: 5em;
+            font-size: 1.35em;
+        }
+        .random {
+            width: 100%;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10em;
+        }
+        h2 {
+            font-family: "Above DEMO";
+            padding-bottom: 2em;
+
+        }
+        .btn {
+            padding: 1em 4em 1em 4em;
+            background-color: #D4DCFE;
+            outline: none;
+            border: none;
+            font-family: "Above DEMO";
+        }
+
+    </style>
+
+</head>
+<body>
+
+
+    <div class="title">
+        <h2>Random Generator</h2>
+    </div>
+    <div class="random">
+        <span class="season">Season: </span><span class="episode">Episode: </span>
+        <button class="btn">click</button>
+    </div>
+
+</body>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script>
+        
+        (function ($, undefined) {
+            $(document).ready(function () {
+
+                var $seasoncnt = $('.season');
+                var $episodecnt = $('.episode')
+
+
+                $('.btn').on('click', function (_e) {
+                    _e.preventDefault();
+
+                    var $seasonnr = Math.floor(Math.random() * 4);
+                    var $episodenr = Math.floor(Math.random() * 25);
+
+                    $seasoncnt.text('Season: ' + $seasonnr);
+                    $episodecnt.text('Episode: ' + $episodenr);
+
+                })
+            })
+        })(jQuery);
+
+
+    </script>
+</html>
